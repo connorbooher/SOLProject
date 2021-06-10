@@ -27,6 +27,20 @@ model1 <- lm(Largest.Gift ~ Enewsletters.Opened +
 tidy(model1)
 ```
 
+```{r viz}
+ggplot(data = data, 
+       aes(x = Gifts.Last.2.Years, y = Largest.Gift)) + 
+  labs(x = "2 Years", y = "Gift") + 
+  geom_point() + 
+  geom_smooth(method="lm", se = FALSE) 
+```
+
+## TO DO:
+
+1. Add in sum of giving in last two years (?)
+2. Add in real-estate holdings and other variables
+3. Run report of over 1000 < 3000? to find correlation between two groups
+
 ## Working Zone
 
 What predictors can be input into my model?

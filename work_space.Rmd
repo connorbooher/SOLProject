@@ -1,0 +1,36 @@
+---
+title: "PLS Working Zone"
+author: "Connor Booher"
+subtitle: SOL Summer Project
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+## Packages
+
+```{r packages, include=FALSE}
+library(tidyverse)
+library(infer)
+library(broom)
+```
+
+```{r packages, include=FALSE}
+data <- read.csv("ProspectScreen.csv")
+data$Largest.Gift = as.numeric(gsub("\\$", "", data$Largest.Gift))
+
+
+model1 <- lm(Largest.Gift ~ Enewsletters.Opened + 
+               Gifts.Last.2.Years, data = data)
+tidy(model1)
+```
+
+## Working Zone
+
+What predictors can be input into my model?
+
+
+
+
